@@ -1,0 +1,4 @@
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyAgreement
+extendedKeyUsage = serverAuth
+subjectAltName = DNS:localhost, DNS:telemetry.auraintel-vpp.com, IP:127.0.0.1

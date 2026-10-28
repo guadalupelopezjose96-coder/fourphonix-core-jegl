@@ -1,0 +1,6 @@
+623282770175b40a7ca3c18896030d27c4df4af823d65bf132e5b6723ea8ecfa  /data/data/com.termux/files/home/auraintel-vpp-stack/auraintel-mtls-aggregator/target/release/auraintel-mtls-aggregator
+af47dc5fadff445405884111858a21cbed6537c22535239883fe09a2cb9e90f6  /data/data/com.termux/files/home/auraintel-vpp-stack/auraintel-edge-agent/target/release/auraintel-edge-agent
+51c644ba7e610e4ba9eb4f01068c65063336a9e166aa237f4936d76cd35deb93  /data/data/com.termux/files/home/auraintel-vpp-stack/auraintel-tax-settlement/target/release/auraintel-tax-settlement
+90a8935f01de904a17441ea430b2821ee373ab41b0e30d831423275bc1b9bed4  /data/data/com.termux/files/home/auraintel-vpp-stack/output/irs_iris_1099_nec_2026.json
+bc029bb68151fce77f97b0a7e39a76b298f45ba234139efccd0294892cef5c84  /data/data/com.termux/files/home/auraintel-vpp-stack/output/irs_iris_1099_nec_2026.csv
+957eebbedcbdd9e5e1c765f2f45c52e2eea476bd158ae0c2fee7424da8953f25  /data/data/com.termux/files/home/auraintel-vpp-stack/output/cfdi40_EDB210514AB9.xml

@@ -1,0 +1,119 @@
+name: auraintel-vpp-production
+
+services:
+  postgres-ledger:
+    image: postgres:16-alpine
+    container_name: auraintel-postgres-ledger
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: auraintel_admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ChangeMe_ZeroTrust_2026!}
+      POSTGRES_DB: auraintel_vpp
+    volumes:
+      - pg_ledger_data:/var/lib/postgresql/data
+      - ./sql/01_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./sql/02_seed_audit_node.sql:/docker-entrypoint-initdb.d/02_seed_audit_node.sql:ro
+    networks:
+      - backend_db_net
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+      - FOWNER
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U auraintel_admin -d auraintel_vpp"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  mtls-aggregator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: auraintel-mtls-aggregator
+    command: ["/usr/local/bin/auraintel-mtls-aggregator"]
+    restart: unless-stopped
+    depends_on:
+      postgres-ledger:
+        condition: service_healthy
+    environment:
+      AURAINTEL_BIND_ADDR: "0.0.0.0:8443"
+      AURAINTEL_CA_CERT: "/certs/ca_root.pem"
+      AURAINTEL_SERVER_CERT: "/certs/server.pem"
+      AURAINTEL_SERVER_KEY: "/certs/server.key"
+      AURAINTEL_HMAC_KEY: ${AURAINTEL_HMAC_KEY:-CLAVE_PRODUCCION_ZERO_TRUST_AURAINTEL_VPP_2026}
+    ports:
+      - "127.0.0.1:8443:8443"
+    volumes:
+      - ./certs:/certs:ro
+    networks:
+      - backend_db_net
+      - telemetry_mtls_net
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  edge-gateway-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: auraintel-edge-agent
+    command: ["/usr/local/bin/auraintel-edge-agent"]
+    restart: unless-stopped
+    depends_on:
+      - mtls-aggregator
+    environment:
+      AURAINTEL_AGGREGATOR_URL: "https://mtls-aggregator:8443/sep2/mup"
+      AURAINTEL_CA_CERT: "/certs/ca_root.pem"
+      AURAINTEL_CLIENT_CERT: "/certs/der_client.pem"
+      AURAINTEL_CLIENT_KEY: "/certs/der_client.key"
+      AURAINTEL_MODBUS_ADDR: "127.0.0.1:1502"
+      AURAINTEL_TAX_ID: "99-8765432"
+    volumes:
+      - ./certs:/certs:ro
+    networks:
+      - telemetry_mtls_net
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  tax-settlement-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: auraintel-tax-settlement
+    command: ["/usr/local/bin/auraintel-tax-settlement"]
+    depends_on:
+      postgres-ledger:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: "host=postgres-ledger user=auraintel_admin password=${POSTGRES_PASSWORD:-ChangeMe_ZeroTrust_2026!} dbname=auraintel_vpp"
+      AURAINTEL_HMAC_KEY: ${AURAINTEL_HMAC_KEY:-CLAVE_PRODUCCION_ZERO_TRUST_AURAINTEL_VPP_2026}
+    volumes:
+      - ./output:/app/output:rw
+    networks:
+      - backend_db_net
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+networks:
+  backend_db_net:
+    driver: bridge
+    internal: true
+  telemetry_mtls_net:
+    driver: bridge
+
+volumes:
+  pg_ledger_data:

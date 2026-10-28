@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd"
+                  Version="4.0"
+                  Serie="AURA"
+                  Folio="1001"
+                  Fecha="2026-10-28T14:18:53"
+                  Sello="HSo1trAKcFI4AocNlNCOjPaq5TW0nz7H0Nlh0liZ4uJR/5jtcV3A+RY1nsP05gp8v/NqfZPn8XBHoUT049vQaEv19WGRk0y8MrFs7vXRGobmmQa4jVpTaKAy8k3H/Y+x33EdRSlnG4IkSprhccLHl5IwZ3oE6zlriLFJ+3MOX2LdeDymR8fO/Bz1o03lF/TqU/tXs4l/6nkWAJG3cKpM8/8tQCMHSvmPQiHEk2wLmvq/z7U/I4LxDlMq8VT7Z7aOfiPq0J3bSUetm73Lsp22788WygVFkOH25SVwxC0ZQQS9Jw5WlX2k9DXTptyH5wrSmYEv9l4jUpiVN0DaFMtqIw=="
+                  FormaPago="03"
+                  NoCertificado="30001000000500003416"
+                  Certificado="MIID+zCCAuOgAwIBAgIUaK2EFe0UhSRTW77kYlR2QKqB/UYwDQYJKoZIhvcNAQELBQAwgYwxCzAJBgNVBAYTAk1YMQ0wCwYDVQQIDARDRE1YMRMwEQYDVQQHDApDdWF1aHRlbW9jMSgwJgYDVQQKDB9BVVJBSU5URUwgVlBQIE1FWElDTyBTQVBJIERFIENWMRgwFgYDVQQLDA9DU0RfRmFjdHVyYWNpb24xFTATBgNVBAMMDEFJVjI2MDEwMUFBQTAeFw0yNjEwMjgxNDE5NTRaFw0zMDEwMjcxNDE5NTRaMIGMMQswCQYDVQQGEwJNWDENMAsGA1UECAwEQ0RNWDETMBEGA1UEBwwKQ3VhdWh0ZW1vYzEoMCYGA1UECgwfQVVSQUlOVEVMIFZQUCBNRVhJQ08gU0FQSSBERSBDVjEYMBYGA1UECwwPQ1NEX0ZhY3R1cmFjaW9uMRUwEwYDVQQDDAxBSVYyNjAxMDFBQUEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDLcbl/LYdE0bKp8ZNIvawnVh+fDw9ouUpms2uTea5U+1vnst94KXKLgSIlC0qndF8YuNFCHxW7CJBiCQfzsIPz+0ydyLqA9ApB7KO6Apueq/5IbmoV44p9QJ546nVuuY4+njZ3Eo8eHVKS92H3UvTYCDq2GsJyd5oJ33j1FHKGyZJp5cYTAXnfob28QwELV4KMLXoRci4y8x+XOe0cjTPL6J2eFKyXY6CLgH8BFI4P7gQlHAAF4gZbGgxpFMx5vDPKxLdAarpbgALNxATdNXZ3oOS7g34fblcNF9fgTkLb4mF3sZdReaCOmw0dL0QkHLJ9M/QMhmliw+NapmhtI87FAgMBAAGjUzBRMB0GA1UdDgQWBBQ6UHdDwt6e1liaxo1QH+30P17oaDAfBgNVHSMEGDAWgBQ6UHdDwt6e1liaxo1QH+30P17oaDAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQCag9Qj2BeRMb5D3dD//q51VgC7JGoiJgfUS7FNtACUA9w+Af2Dvi22DwLGR1diSXoFkVChsuBIbB9aW6X9w/YgheDlghIbZX6MEmPqO+WtsS19wDxuZPWx4dHYFlEn+2lvkfzQkbEPlVyKECx/Z/cvQ5xtMe0nlm6VbVKj1RHT3lHybEe2Hx74jNHGmYUsxFpTgIEdTBbfdRNUSswEIIInxzfkvMlp3sY0TP9rytlS6X4pODspjTURMEgCQWBry6HsNctGZiqEsRpLSnYb1iZCJnxgRKObG5eYogBVCBf5Q6g7R2YGZGkZ4s1d0WgYdj/G46J6ehX78HKqouQw9HT8"
+                  SubTotal="35000.00"
+                  Moneda="MXN"
+                  TipoCambio="1"
+                  Total="40600.00"
+                  TipoDeComprobante="I"
+                  Exportacion="01"
+                  MetodoPago="PUE"
+                  LugarExpedicion="06600">
+    <cfdi:Emisor Rfc="AIV260101AAA"
+                 Nombre="AURAINTEL VPP MEXICO SAPI DE CV"
+                 RegimenFiscal="601"/>
+    <cfdi:Receptor Rfc="EDB210514AB9"
+                   Nombre="ENERGIA DISTRIBUIDA DEL BAJIO SAPI DE CV"
+                   DomicilioFiscalReceptor="32808"
+                   RegimenFiscalReceptor="601"
+                   UsoCFDI="G03"/>
+    <cfdi:Conceptos>
+        <cfdi:Concepto ClaveProdServ="81112000"
+                       NoIdentificacion="VPP-DER-01"
+                       Cantidad="15000.0000"
+                       ClaveUnidad="E48"
+                       Unidad="Unidad de servicio"
+                       Descripcion="Servicios de agregacion, optimizacion y despacho energetico AuraIntel VPP (15000.00 kWh)"
+                       ValorUnitario="2.3333"
+                       Importe="35000.00"
+                       ObjetoImp="02">
+            <cfdi:Impuestos>
+                <cfdi:Traslados>
+                    <cfdi:Traslado Base="35000.00"
+                                   Impuesto="002"
+                                   TipoFactor="Tasa"
+                                   TasaOCuota="0.160000"
+                                   Importe="5600.00"/>
+                </cfdi:Traslados>
+            </cfdi:Impuestos>
+        </cfdi:Concepto>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos TotalImpuestosTrasladados="5600.00">
+        <cfdi:Traslados>
+            <cfdi:Traslado Base="35000.00"
+                           Impuesto="002"
+                           TipoFactor="Tasa"
+                           TasaOCuota="0.160000"
+                           Importe="5600.00"/>
+        </cfdi:Traslados>
+    </cfdi:Impuestos>
+</cfdi:Comprobante>

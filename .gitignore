@@ -1,0 +1,16 @@
+# Bloqueo estricto de material criptografico privado (NIST SP 800-57)
+*.key
+*.pem
+*.csr
+*.srl
+*.p12
+*.pfx
+.env
+.env.*
+
+# Directorios de compilacion y logs locales
+**/target/
+logs/*.log
+
+# Conservar manifiesto de auditoria pero ignorar datos sensibles si se desea
+!output/AUDIT_MANIFEST_SHA256.txt

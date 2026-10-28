@@ -1,0 +1,18 @@
+{
+  "submission_id": "dc0fffe9-4d95-49fe-b629-89e894cb99f8",
+  "tax_year": 2026,
+  "payer_name": "AURAINTEL VPP LLC",
+  "payer_ein": "99-1234567",
+  "form_type": "1099-NEC",
+  "recipients": [
+    {
+      "recipient_tin": "99-8765432",
+      "recipient_name": "SUNSHINE SOLAR STORAGE HOLDINGS LLC",
+      "recipient_zip": "32808",
+      "box_1_nonemployee_comp_usd": "2700.00",
+      "box_4_federal_income_tax_withheld_usd": "0.00",
+      "total_dispatched_kwh": "22500.000",
+      "verified_ledger_events": 1
+    }
+  ]
+}
