@@ -107,7 +107,7 @@ fn build_middleware_channels() -> [MiddlewareOidcGateChannel; 7] {
         MiddlewareOidcGateChannel {
             gate_id: "MW-GATE-05-AURAINTEL-GLOBAL",
             workflow_name: "GCP Zero-Trust OIDC Sync",
-            domain: CorporateDomain::AuraIntelGlobal,
+            domain: CorporateDomain::AuraIntelStudios3d,
             domain_fqdn: "auraintel-global.com",
             keyless_oidc_verified: true,
             static_key_detected: false,

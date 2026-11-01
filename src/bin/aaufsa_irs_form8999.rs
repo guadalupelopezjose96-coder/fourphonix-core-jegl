@@ -219,7 +219,7 @@ fn build_controlled_group_schedules() -> [Form8999ScheduleLine; 6] {
         // 5. AuraIntel-Global.com: Exención Grupo Controlado <= $5M
         Form8999ScheduleLine {
             schedule_id: "SCH-A-05",
-            domain: CorporateDomain::AuraIntelGlobal,
+            domain: CorporateDomain::AuraIntelStudios3d,
             domain_name: "AuraIntel-Global-com",
             statutory_section: "IRC Sec. 5000G(b) Small Business Threshold Exemption",
             gross_receipts_micros: 390_000_000_000,

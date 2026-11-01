@@ -86,7 +86,7 @@ fn build_introspection_vectors() -> [DomainSelfTestVector; 7] {
             active_services: 6,
         },
         DomainSelfTestVector {
-            domain: CorporateDomain::AuraIntelGlobal,
+            domain: CorporateDomain::AuraIntelStudios3d,
             domain_fqdn: "auraintel-global.com",
             zero_retention_store_false: true,
             worm_rls_serializable_active: true,

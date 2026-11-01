@@ -94,7 +94,7 @@ fn build_gemini_enterprise_channels() -> [GeminiGatewayChannel; 7] {
         },
         GeminiGatewayChannel {
             channel_id: "GEMINI-GW-05-AURAINTEL-GLOBAL-ELITE",
-            domain: CorporateDomain::AuraIntelGlobal,
+            domain: CorporateDomain::AuraIntelStudios3d,
             domain_fqdn: "auraintel-global.com",
             github_repo: "guadalupelopezjose96-coder/Aura-Intel-Elite-Core",
             idempotency_key: [0x95; 32],

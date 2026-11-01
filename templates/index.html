@@ -1,0 +1,197 @@
+/* * PROTOCOLO LEY ADT - MÓDULO: REALIDAD REAL JEGL
+ * PROPIETARIO: JOSÉ EMANUEL GUADALUPE LÓPEZ (JEGL)
+ * MARCO LEGAL: STANDARD 1979 / LEY DE EQUIVALENCIA FISCAL
+ * ESTADO: 100% PROTEGIDO - PROHIBIDA LA SUPLANTACIÓN VIRTUAL/AUMENTADA
+ */
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFCC00">
+    <title>FOURPHONIX CORE - JEGL</title>
+    
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="apple-touch-icon" href="/static/icon-192.png">
+
+    <style>
+        :root {
+            --fondo: #050a0f;
+            --dorado: #ffcc00;
+            --verde-v: #00ffcc;
+            --texto: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--fondo);
+            color: var(--texto);
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Splash Screen de Justicia */
+        #splash-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: var(--fondo);
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease-out;
+        }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--dorado);
+            width: 100%;
+            z-index: 10;
+        }
+
+        .bunker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 40px 20px;
+            width: 100%;
+            max-width: 1100px;
+            box-sizing: border-box;
+        }
+
+        .card-motor {
+            border: 1px solid var(--dorado);
+            background: rgba(255, 204, 0, 0.02);
+            padding: 30px;
+            text-align: center;
+            border-radius: 5px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .card-motor:hover {
+            border-color: var(--verde-v);
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .precio { font-size: 2.5rem; color: var(--dorado); margin: 20px 0; }
+
+        button {
+            background: var(--dorado);
+            color: var(--fondo);
+            border: none;
+            padding: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+
+        button:hover { background: var(--verde-v); }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.7rem;
+            color: #444;
+            text-align: center;
+        }
+
+        /* Geometría de Fondo */
+        .hexagon-bg {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px; height: 500px;
+            border: 1px solid rgba(255, 204, 0, 0.03);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="splash-screen">
+        <svg width="120" height="120" viewBox="0 0 512 512">
+            <path d="M256 50 L434.35 153 L434.35 359 L256 462 L77.65 359 L77.65 153 Z" 
+                  fill="none" stroke="#FFCC00" stroke-width="15">
+                <animate attributeName="stroke-dasharray" from="0, 1500" to="1500, 0" dur="2s" />
+            </path>
+        </svg>
+        <h2 style="color: var(--dorado); letter-spacing: 3px;">FOURPHONIX</h2>
+    </div>
+
+    <div class="hexagon-bg"></div>
+
+    <header>
+        <h1>BÚNKER DE PLUSVALÍA</h1>
+        <p style="color: var(--verde-v); font-size: 0.8rem;">[V] SISTEMA SOBERANO JEGL ACTIVO</p>
+    </header>
+
+    <div class="bunker-grid">
+        <div class="card-motor">
+            <h3>HEXAPHONIX 3D PRO</h3>
+            <div class="precio">$500.00</div>
+            <form action="/create-checkout-session" method="POST">
+                <input type="hidden" name="product_name" value="Hexaphonix 3d Pro">
+                <button type="submit">ADQUIRIR v</button>
+            </form>
+        </div>
+
+        <div class="card-motor">
+            <h3>HEXAPHONIX 3D ALPHA</h3>
+            <div class="precio">$100.00</div>
+            <form action="/create-checkout-session" method="POST">
+                <input type="hidden" name="product_name" value="Hexaphonix 3d Alpha">
+                <button type="submit">ADQUIRIR v</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        AUTORÍA: JOSÉ EMANUEL GUADALUPE LÓPEZ (JEGL) | REALIDAD REAL 2026
+    </footer>
+
+    <script>
+        // Inexistenciación de Splash
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const s = document.getElementById('splash-screen');
+                s.style.opacity = '0';
+                setTimeout(() => s.style.display = 'none', 800);
+            }, 1200);
+        });
+
+        // Registro de Guardián PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
+<!-- STRIPE_LIVE_B2B_CHECKOUT -->
+<section style="max-width:1150px;margin:32px auto;padding:24px;border:1px solid #10b981;border-radius:12px;background:#090d16;color:#f8fafc;font-family:monospace;">
+  <h2 style="color:#10b981;margin-top:0;">SUSCRIPCIÓN MENSUAL GLOBAL B2B (STRIPE LIVE)</h2>
+  <p style="color:#94a3b8;font-size:0.9rem;">Planes 100% mensuales escalados para cualquier empresa del mundo con Tax ID (EIN / VAT / RFC / CNPJ) e inmunidad IRC Sec. 5000H(d).</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px;">
+    <a href="https://buy.stripe.com/6oU8wP6TwbqwciHcDocjS0e" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" style="padding:16px;background:#1e293b;border:1px solid #334155;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:bold;text-align:center;">
+      1. Startup &amp; PyME<br><span style="font-size:1.25rem;color:#38bdf8;">USD 299.00 / mes</span>
+    </a>
+    <a href="https://buy.stripe.com/6oU8wP6TwbqwciHcDocjS0e" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" style="padding:16px;background:#1e3a8a;border:1px solid #3b82f6;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:bold;text-align:center;">
+      2. Mid-Market B2B<br><span style="font-size:1.25rem;color:#60a5fa;">USD 1,499.00 / mes</span>
+    </a>
+    <a href="https://buy.stripe.com/7sY9AT4LodyEgyXcDocjS0a" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" style="padding:16px;background:#065f46;border:1px solid #10b981;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:bold;text-align:center;">
+      3. Enterprise 5000H<br><span style="font-size:1.25rem;color:#34d399;">USD 4,875.00 / mes</span>
+    </a>
+    <a href="https://buy.stripe.com/6oU4gz6TwcuA1E30UgcjS0f" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" style="padding:16px;background:#0f766e;border:1px solid #14b8a6;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:bold;text-align:center;">
+      4. Mayorista VPP / Holding<br><span style="font-size:1.25rem;color:#2dd4bf;">USD 29,250.00 / mes</span>
+    </a>
+  </div>
+</section>
+<!-- END_STRIPE_LIVE_B2B_CHECKOUT -->
+</body>
+</html>

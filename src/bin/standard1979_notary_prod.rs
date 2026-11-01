@@ -52,7 +52,7 @@ fn build_48_services_notary_grid() -> [DomainServiceGridRow; 6] {
             audit_fee_micros: 120_000_000_000,
         },
         DomainServiceGridRow {
-            domain: CorporateDomain::AuraIntelGlobal,
+            domain: CorporateDomain::AuraIntelStudios3d,
             domain_fqdn: "auraintel-global.com (AuraIntel VPP Grid)",
             active_layers: 6,
             worm_locked: true,

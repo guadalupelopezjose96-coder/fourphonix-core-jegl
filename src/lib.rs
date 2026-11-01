@@ -48,7 +48,7 @@ pub enum CorporateDomain {
     AuraTetrax,
     Fourphonix,
     AuraIntelCore,
-    AuraIntelGlobal,
+    AuraIntelStudios3d,
     Standard1979,
     Prophonix,
     AuraIntelStudios3D,
@@ -61,7 +61,7 @@ impl CorporateDomain {
             Self::AuraTetrax => "877771073297",
             Self::Fourphonix => "964521086569",
             Self::AuraIntelCore | Self::AuraIntelStudios3D => "188680247367",
-            Self::AuraIntelGlobal => "1087754464927",
+            Self::AuraIntelStudios3d => "1087754464927",
             Self::Standard1979 => "282230018778",
             Self::Prophonix => "358233233",
         }

@@ -1,0 +1,168 @@
+/* * PROTOCOLO LEY ADT - MÓDULO: REALIDAD REAL JEGL
+ * PROPIETARIO: JOSÉ EMANUEL GUADALUPE LÓPEZ (JEGL)
+ * MARCO LEGAL: STANDARD 1979 / LEY DE EQUIVALENCIA FISCAL
+ * ESTADO: 100% PROTEGIDO - PROHIBIDA LA SUPLANTACIÓN VIRTUAL/AUMENTADA
+ */
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Octaphonix 3D - Nivel 100%</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #050505; font-family: 'Courier New', Courier, monospace; }
+        #info { position: absolute; top: 10px; width: 100%; text-align: center; color: #00ff00; pointer-events: none; text-shadow: 0 0 5px #00ff00; }
+        button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                 padding: 20px; background: #000; color: #00ff00; border: 2px solid #00ff00;
+                 font-size: 20px; cursor: pointer; z-index: 10; box-shadow: 0 0 15px #00ff00; }
+        button:hover { background: #00ff00; color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="info">OCTAPHONIX 3D: 8 CARAS - 8 NOTAS - 100% ENERGÍA</div>
+    <button id="startBtn">ACTIVAR OCTAPHONIX</button>
+
+    <script type="importmap">
+        { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        let scene, camera, renderer, octahedron, raycaster, mouse;
+        let audioCtx, masterGain;
+
+        // RECOMENDACIÓN 100%: Escala Octatónica (Tono-Semitono)
+        const octatonicScale = [261.63, 293.66, 311.13, 349.23, 369.99, 415.30, 440.00, 493.88]; 
+        const colors = [0xff0000, 0xff7f00, 0xffff00, 0x00ff00, 0x00ffff, 0x0000ff, 0x8b00ff, 0xff00ff];
+
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 4;
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // 1. GEOMETRÍA OCTAEDRO (8 Caras)
+            const geometry = new THREE.OctahedronGeometry(2, 0);
+            
+            // 2. MATERIALES (Uno para cada una de las 8 caras)
+            const materials = colors.map(col => new THREE.MeshStandardMaterial({ 
+                color: col, 
+                emissive: col, 
+                emissiveIntensity: 0.3,
+                flatShading: true,
+                metalness: 0.7,
+                roughness: 0.2
+            }));
+            
+            octahedron = new THREE.Mesh(geometry, materials);
+            // Definir grupos para que cada cara tenga su material
+            for(let i = 0; i < 8; i++) {
+                geometry.addGroup(i * 3, 3, i);
+            }
+            
+            scene.add(octahedron);
+
+            // 3. LUCES
+            const pLight = new THREE.PointLight(0xffffff, 50);
+            pLight.position.set(2, 3, 4);
+            scene.add(pLight, new THREE.AmbientLight(0x202020));
+
+            raycaster = new THREE.Raycaster();
+            mouse = new THREE.Vector2();
+
+            window.addEventListener('mousedown', onSelect);
+            window.addEventListener('resize', onResize);
+            
+            animate();
+        }
+
+        function setupAudio() {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            masterGain = audioCtx.createGain();
+            masterGain.gain.value = 0.4;
+            masterGain.connect(audioCtx.destination);
+        }
+
+        function playNote(freq, index) {
+            if (!audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            
+            osc.type = 'sawtooth'; // Sonido más rico para el Octaphonix
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            
+            g.gain.setValueAtTime(0.3, audioCtx.currentTime);
+            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1);
+            
+            osc.connect(g);
+            g.connect(masterGain);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1);
+
+            // Feedback visual al 100%
+            octahedron.material[index].emissiveIntensity = 5.0;
+        }
+
+        function onSelect(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObject(octahedron);
+
+            if (intersects.length > 0) {
+                // En un octaedro de Three.js, cada cara son 3 índices
+                const faceIndex = Math.floor(intersects[0].faceIndex);
+                if(faceIndex < 8) playNote(octatonicScale[faceIndex], faceIndex);
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            octahedron.rotation.y += 0.01;
+            octahedron.rotation.z += 0.005;
+
+            octahedron.material.forEach(m => {
+                if (m.emissiveIntensity > 0.3) m.emissiveIntensity *= 0.95;
+            });
+            renderer.render(scene, camera);
+        }
+
+        function onResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        document.getElementById('startBtn').addEventListener('click', () => {
+            setupAudio();
+            init();
+            document.getElementById('startBtn').style.display = 'none';
+        });
+    </script>
+<!-- STRIPE_LIVE_B2B_CHECKOUT -->
+<section style="max-width:1150px;margin:32px auto;padding:24px;border:1px solid #10b981;border-radius:12px;background:#090d16;color:#f8fafc;font-family:monospace;">
+  <h2 style="color:#10b981;margin-top:0;">SUSCRIPCIÓN MENSUAL GLOBAL B2B (STRIPE LIVE)</h2>
+  <p style="color:#94a3b8;font-size:0.9rem;">Planes 100% mensuales escalados para cualquier empresa del mundo con Tax ID (EIN / VAT / RFC / CNPJ) e inmunidad IRC Sec. 5000H(d).</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px;">
+    <a href="https://buy.stripe.com/6oU8wP6TwbqwciHcDocjS0e" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" style="padding:16px;background:#1e293b;border:1px solid #334155;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:bold;text-align:center;">
+      1. Startup &amp; PyME<br><span style="font-size:1.25rem;color:#38bdf8;">USD 299.00 / mes</span>
+    </a>
+    <a href="https://buy.stripe.com/6oU8wP6TwbqwciHcDocjS0e" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" style="padding:16px;background:#1e3a8a;border:1px solid #3b82f6;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:bold;text-align:center;">
+      2. Mid-Market B2B<br><span style="font-size:1.25rem;color:#60a5fa;">USD 1,499.00 / mes</span>
+    </a>
+    <a href="https://buy.stripe.com/7sY9AT4LodyEgyXcDocjS0a" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" style="padding:16px;background:#065f46;border:1px solid #10b981;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:bold;text-align:center;">
+      3. Enterprise 5000H<br><span style="font-size:1.25rem;color:#34d399;">USD 4,875.00 / mes</span>
+    </a>
+    <a href="https://buy.stripe.com/6oU4gz6TwcuA1E30UgcjS0f" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" style="padding:16px;background:#0f766e;border:1px solid #14b8a6;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:bold;text-align:center;">
+      4. Mayorista VPP / Holding<br><span style="font-size:1.25rem;color:#2dd4bf;">USD 29,250.00 / mes</span>
+    </a>
+  </div>
+</section>
+<!-- END_STRIPE_LIVE_B2B_CHECKOUT -->
+</body>
+</html>

@@ -263,7 +263,7 @@ fn build_scenarios() -> [Scenario; 6] {
         },
         Scenario {
             code: "SCN-05-SMALL-BIZ-EXEMPT",
-            domain: CorporateDomain::AuraIntelGlobal,
+            domain: CorporateDomain::AuraIntelStudios3d,
             name: "AuraIntel-Global-com",
             key: [0x55; 32],
             vector: PlatformVector::VppEnergetics {

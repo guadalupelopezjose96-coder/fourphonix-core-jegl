@@ -91,7 +91,7 @@ fn build_holding_consolidated_balance() -> [ConsolidatedLedgerDivision; 6] {
         // 5. AuraIntel-Global.com (1087754464927): $390k Audit + $110k Notary
         ConsolidatedLedgerDivision {
             division_code: "DIV-05-AURAINTEL-GLOBAL",
-            domain: CorporateDomain::AuraIntelGlobal,
+            domain: CorporateDomain::AuraIntelStudios3d,
             domain_fqdn: "auraintel-global.com (Global Operations)",
             engine_binary: "aaufsa-simulator / standard1979-notary-prod",
             active_services: 6,
