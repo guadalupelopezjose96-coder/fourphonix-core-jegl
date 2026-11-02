@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.7",
-  "serialNumber": "urn:uuid:e2f43984-d023-4ab9-a59c-230a8cf476e7",
+  "serialNumber": "urn:uuid:478f7050-bb75-4422-bbc9-170ca38bfdd8",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-11-01T23:26:30+00:00",
+    "timestamp": "2026-11-02T01:53:03+00:00",
     "tools": {
       "components": [
         {
@@ -20,7 +20,7 @@
       ]
     },
     "component": {
-      "bom-ref": "6c541630-5af3-4fc4-81ad-07258d5a1972",
+      "bom-ref": "f0bf3db9-9555-40b7-ac4e-ae79ed2d15d6",
       "type": "application",
       "name": ".",
       "properties": [
@@ -33,7 +33,7 @@
   },
   "components": [
     {
-      "bom-ref": "9229f39e-67d2-4fe3-b07a-ce8b4038d7c8",
+      "bom-ref": "d41fd4b1-ff10-4ed1-9c7f-a0f6bb904de4",
       "type": "application",
       "name": "Cargo.lock",
       "properties": [
@@ -67,15 +67,15 @@
   ],
   "dependencies": [
     {
-      "ref": "6c541630-5af3-4fc4-81ad-07258d5a1972",
+      "ref": "d41fd4b1-ff10-4ed1-9c7f-a0f6bb904de4",
       "dependsOn": [
-        "9229f39e-67d2-4fe3-b07a-ce8b4038d7c8"
+        "pkg:cargo/sovereign-multi-entity-governor@1.0.0"
       ]
     },
     {
-      "ref": "9229f39e-67d2-4fe3-b07a-ce8b4038d7c8",
+      "ref": "f0bf3db9-9555-40b7-ac4e-ae79ed2d15d6",
       "dependsOn": [
-        "pkg:cargo/sovereign-multi-entity-governor@1.0.0"
+        "d41fd4b1-ff10-4ed1-9c7f-a0f6bb904de4"
       ]
     },
     {
