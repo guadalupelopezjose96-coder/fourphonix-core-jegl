@@ -3,7 +3,7 @@ SPDX-License-Identifier: LicenseRef-AuraIntelCore-Proprietary
 Copyright (c) 2026 José Emanuel Guadalupe López (JEGL) - AuraIntelCore / Standard 1979. All Rights Reserved.
 -->
 
-# MARCO REGULATORIO DE INDICADORES, RECAPITULACIONES, CONTRATO HÍBRIDO B2B Y LIQUIDACIÓN (100% WORM)
+# MARCO REGULATORIO DE INDICADORES, RECAPITULACIONES, PRODUCTOS DIGITALES, CONTRATO HÍBRIDO B2B Y LIQUIDACIÓN (100% WORM)
 
 **Titular y Autor:** José Emanuel Guadalupe López (JEGL)  
 **Ecosistema:** AuraIntelCore.com | Standard1979.com | Fourphonix-com (964521086569) | AuraTetrax-com (877771073297)  
@@ -45,3 +45,19 @@ Copyright (c) 2026 José Emanuel Guadalupe López (JEGL) - AuraIntelCore / Stand
   - `Beneficio_Neto_Cliente_79pct_uUSD = Ahorro_Total_uUSD - Comision_Desempeno_21pct_uUSD`
   - `Total_Factura_B2B_uUSD = Cuota_Base_uUSD + Comision_Desempeno_21pct_uUSD + Impuestos_Indirectos_uUSD`
 - **Paso 3 (Asiento ACID y Cobro Stripe Live):** Escritura inmutable en `~/ledger_audit_vault/*.jsonl` (`chmod 0400`), emisión de factura PEPPOL BIS Billing 3.0 / UBL 2.1 y ejecución en Stripe Live.
+
+---
+
+## 4. ESTÁNDAR DE RECAPITULACIONES DETERMINISTAS Y CIERRES CONTABLES (ZERO-FINDINGS)
+
+1. **Ventanas Temporales Semiabiertas:** Todo corte horario, diario o mensual se evalúa sobre el intervalo semiabierto `[t_inicio, t_fin)` en UTC RFC 3339 sincronizado por IEEE 1588 PTP para impedir doble conteo u omisión de eventos.
+2. **Agregación Sin Deriva (1:1):** El total de toda recapitulación es la suma entera exacta (`i128`) de los asientos primarios en `~/ledger_audit_vault/*.jsonl`, prohibiendo el re-redondeo en coma flotante (`#![deny(clippy::float_arithmetic)]`).
+3. **Conciliación Trilateral Inmutable:** Toda recapitulación emitida mantiene equivalencia matemática 1:1 entre (a) Telemetría M&V verificada, (b) Libro Mayor de Partida Doble WORM y (c) Facturación PEPPOL / Stripe Live, sellada criptográficamente en `SOVEREIGN_COMPLIANCE_MANIFEST.sha256` bajo permisos `0400`.
+
+---
+
+## 5. GOBERNANZA INTEGRAL DEL 100% DE TODO PRODUCTO DIGITAL (SAAS, APIS, BINARIOS, MODELOS IA Y CONTENEDORES)
+
+1. **Cadena de Suministro y Compilación Determinista (SLSA / SBOM / CRA):** Todo producto digital se compila sin aritmética flotante en rutas financieras (`i64`/`i128`), verificando dependencias mediante `cargo-deny` (`deny.toml`), políticas OPA Rego (`Conftest`), listas de materiales CycloneDX SBOM y conformidad con EU Cyber Resilience Act (CRA), ISO/IEC 27001, SOC 2 Type II y NIST SSDF.
+2. **Propiedad Intelectual y Licenciamiento Comercial (SPDX / EULA / MSA):** El 100% de los activos digitales porta el identificador `LicenseRef-AuraIntelCore-Proprietary` bajo titularidad exclusiva de **José Emanuel Guadalupe López (JEGL)**, comercializándose mediante contratos B2B MSA/SLA/EULA con arquitectura Zero-Trust (mTLS / JWT / OIDC).
+3. **Tributación Digital Transfronteriza y Liquidación Certificada:** La explotación comercial de todo producto digital cumple con el cálculo determinista de impuestos indirectos sobre servicios digitales (US SaaS Sales Tax / EU VAT OSS / IRC Ch. 56), facturación electrónica PEPPOL BIS Billing 3.0 / UBL 2.1 y auditoría forense WORM (`0400`).
