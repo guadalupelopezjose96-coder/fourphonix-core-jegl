@@ -3,12 +3,12 @@ SPDX-License-Identifier: LicenseRef-AuraIntelCore-Proprietary
 Copyright (c) 2026 José Emanuel Guadalupe López (JEGL) - AuraIntelCore / Standard 1979. All Rights Reserved.
 -->
 
-# MARCO REGULATORIO DE INDICADORES, RECAPITULACIONES, PRODUCTOS DIGITALES, CONTRATO HÍBRIDO B2B Y LIQUIDACIÓN (100% WORM)
+# MARCO REGULATORIO DE INDICADORES, RECAPITULACIONES, PRODUCTOS DIGITALES, VIRTUALES Y CIBERNÉTICOS AL 100%, CONTRATO HÍBRIDO B2B Y LIQUIDACIÓN (100% WORM)
 
 **Titular y Autor:** José Emanuel Guadalupe López (JEGL)  
 **Ecosistema:** AuraIntelCore.com | Standard1979.com | Fourphonix-com (964521086569) | AuraTetrax-com (877771073297)  
-**Modelo Comercial Activo:** Híbrido Acumulativo (Suscripción Fija Mensual Tiers 1-4 + 21% Comisión por Desempeño M&V)  
-**Estado de Cumplimiento:** 100% Legal | 100% Lícito | 100% Determinista | Zero-Float Drift (i64/i128)  
+**Modelo Comercial Activo:** Híbrido Acumulativo al 100% (Suscripción Fija Mensual Tiers 1-4 + 21% Comisión por Desempeño M&V)  
+**Estado de Cumplimiento:** 100% Correcto | 100% Debido | 100% Legal | 100% Lícito | 100% Determinista | Zero-Float Drift (i64/i128)  
 
 ---
 
@@ -56,8 +56,9 @@ Copyright (c) 2026 José Emanuel Guadalupe López (JEGL) - AuraIntelCore / Stand
 
 ---
 
-## 5. GOBERNANZA INTEGRAL DEL 100% DE TODO PRODUCTO DIGITAL (SAAS, APIS, BINARIOS, MODELOS IA Y CONTENEDORES)
+## 5. GOBERNANZA INTEGRAL DEL 100% DE TODO PRODUCTO DIGITAL, VIRTUAL Y CIBERNÉTICO AL 100%
 
-1. **Cadena de Suministro y Compilación Determinista (SLSA / SBOM / CRA):** Todo producto digital se compila sin aritmética flotante en rutas financieras (`i64`/`i128`), verificando dependencias mediante `cargo-deny` (`deny.toml`), políticas OPA Rego (`Conftest`), listas de materiales CycloneDX SBOM y conformidad con EU Cyber Resilience Act (CRA), ISO/IEC 27001, SOC 2 Type II y NIST SSDF.
-2. **Propiedad Intelectual y Licenciamiento Comercial (SPDX / EULA / MSA):** El 100% de los activos digitales porta el identificador `LicenseRef-AuraIntelCore-Proprietary` bajo titularidad exclusiva de **José Emanuel Guadalupe López (JEGL)**, comercializándose mediante contratos B2B MSA/SLA/EULA con arquitectura Zero-Trust (mTLS / JWT / OIDC).
-3. **Tributación Digital Transfronteriza y Liquidación Certificada:** La explotación comercial de todo producto digital cumple con el cálculo determinista de impuestos indirectos sobre servicios digitales (US SaaS Sales Tax / EU VAT OSS / IRC Ch. 56), facturación electrónica PEPPOL BIS Billing 3.0 / UBL 2.1 y auditoría forense WORM (`0400`).
+1. **Plano Digital al 100% (Software, APIs, Binarios y Libros Contables):** Compilación reproducible en punto fijo (`i64`/`i128`), cadena de suministro asegurada (SLSA Nivel 3+, CycloneDX SBOM, `cargo-deny`, OPA Rego) y conformidad con EU Cyber Resilience Act (CRA), ISO/IEC 27001, SOC 2 Type II y NIST SSDF.
+2. **Plano Virtual al 100% (Contenedores, Gemelos Digitales y Plantas Virtuales VPP):** Aislamiento estricto de entornos virtualizados y Kubernetes, agregación determinista de recursos energéticos distribuidos (DERs) conforme a FERC Order 2222 e IEEE 1547-2018.
+3. **Plano Cibernético al 100% (Sistemas Ciberfísicos CPS, Telecontrol OT/IT e IA):** Lazo cerrado de control y protección industrial sobre IEC 61850 (`:10102`) e IEC 62351 (mTLS), gobernado por ISA/IEC 62443, NERC CIP, ISO/IEC 42001, EU AI Act y CIRCIA, con interbloqueo físico determinista (`XCBR1`).
+4. **Propiedad Intelectual, Licenciamiento y Tributación Transfronteriza al 100%:** Titularidad exclusiva de **José Emanuel Guadalupe López (JEGL)** (`LicenseRef-AuraIntelCore-Proprietary`), contratos B2B MSA/SLA/EULA y liquidación fiscal internacional (US SaaS/Virtual Sales Tax, EU VAT OSS, IRC Ch. 56, PEPPOL BIS Billing 3.0 y Stripe Live) sellada en modo WORM (`0400`).
