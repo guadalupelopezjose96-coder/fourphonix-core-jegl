@@ -3,7 +3,7 @@ SPDX-License-Identifier: LicenseRef-AuraIntelCore-Proprietary
 Copyright (c) 2026 José Emanuel Guadalupe López (JEGL) - AuraIntelCore / Standard 1979. All Rights Reserved.
 -->
 
-# MARCO REGULATORIO DE INDICADORES, RECAPITULACIONES, PRODUCTOS DIGITALES, VIRTUALES Y CIBERNÉTICOS AL 100%, CONTRATO HÍBRIDO B2B Y LIQUIDACIÓN (100% WORM)
+# MARCO REGULATORIO DE INDICADORES, RECAPITULACIONES, PRODUCTOS DIGITALES, VIRTUALES Y CIBERNÉTICOS, Y EL 100% DE TODAS LAS VPP AL 100% (100% WORM)
 
 **Titular y Autor:** José Emanuel Guadalupe López (JEGL)  
 **Ecosistema:** AuraIntelCore.com | Standard1979.com | Fourphonix-com (964521086569) | AuraTetrax-com (877771073297)  
@@ -58,7 +58,14 @@ Copyright (c) 2026 José Emanuel Guadalupe López (JEGL) - AuraIntelCore / Stand
 
 ## 5. GOBERNANZA INTEGRAL DEL 100% DE TODO PRODUCTO DIGITAL, VIRTUAL Y CIBERNÉTICO AL 100%
 
-1. **Plano Digital al 100% (Software, APIs, Binarios y Libros Contables):** Compilación reproducible en punto fijo (`i64`/`i128`), cadena de suministro asegurada (SLSA Nivel 3+, CycloneDX SBOM, `cargo-deny`, OPA Rego) y conformidad con EU Cyber Resilience Act (CRA), ISO/IEC 27001, SOC 2 Type II y NIST SSDF.
-2. **Plano Virtual al 100% (Contenedores, Gemelos Digitales y Plantas Virtuales VPP):** Aislamiento estricto de entornos virtualizados y Kubernetes, agregación determinista de recursos energéticos distribuidos (DERs) conforme a FERC Order 2222 e IEEE 1547-2018.
-3. **Plano Cibernético al 100% (Sistemas Ciberfísicos CPS, Telecontrol OT/IT e IA):** Lazo cerrado de control y protección industrial sobre IEC 61850 (`:10102`) e IEC 62351 (mTLS), gobernado por ISA/IEC 62443, NERC CIP, ISO/IEC 42001, EU AI Act y CIRCIA, con interbloqueo físico determinista (`XCBR1`).
-4. **Propiedad Intelectual, Licenciamiento y Tributación Transfronteriza al 100%:** Titularidad exclusiva de **José Emanuel Guadalupe López (JEGL)** (`LicenseRef-AuraIntelCore-Proprietary`), contratos B2B MSA/SLA/EULA y liquidación fiscal internacional (US SaaS/Virtual Sales Tax, EU VAT OSS, IRC Ch. 56, PEPPOL BIS Billing 3.0 y Stripe Live) sellada en modo WORM (`0400`).
+1. **Plano Digital al 100%:** Compilación reproducible en punto fijo (`i64`/`i128`), cadena de suministro asegurada (SLSA Nivel 3+, CycloneDX SBOM, `cargo-deny`, OPA Rego) y conformidad con EU Cyber Resilience Act (CRA), ISO/IEC 27001, SOC 2 Type II y NIST SSDF.
+2. **Plano Virtual al 100%:** Aislamiento estricto de entornos virtualizados y Kubernetes, gemelos digitales y agregación determinista conforme a FERC Order 2222 e IEEE 1547-2018.
+3. **Plano Cibernético al 100%:** Lazo cerrado de control industrial sobre IEC 61850 (`:10102`) e IEC 62351 (mTLS), gobernado por ISA/IEC 62443, NERC CIP, ISO/IEC 42001, EU AI Act y CIRCIA, con interbloqueo físico determinista (`XCBR1`).
+
+---
+
+## 6. GOBERNANZA INTEGRAL DEL 100% DE TODAS LAS PLANTAS VIRTUALES DE ENERGÍA (VPP) AL 100%
+
+1. **Interconexión Eléctrica, Agregación DER y Despacho Determinista:** El 100% de las Plantas Virtuales de Energía (VPP) opera bajo cumplimiento estricto de FERC Order 2222, IEEE 1547-2018 / IEEE 1547.1, UL 1741 SB, IEC 61850 (`XCBR1`, `MMXU`, `DGEN`), IEC 62351 (X.509 mTLS), IEEE 2030.5 (SEP 2.0) y OpenADR 2.0b/3.0, garantizando interbloqueo automático ante aperturas de protección (`vpp_breaker_status == 0`).
+2. **Metrología Fiscal, M&V (IPMVP) y Liquidación Híbrida VPP:** Medición de grado fiscal (ANSI C12.20 Clase 0.2 / IEC 62053-22) sincronizada por IEEE 1588 PTP, cálculo determinista de ahorros e ingresos mayoristas (LMP) mediante IPMVP Opción C / ASHRAE Guideline 14 y facturación acumulativa en `i128` (`Suscripción Fija Tiers 1-4 + 2100 bps Plataforma / 7900 bps Cliente`) vía PEPPOL BIS Billing 3.0 y Stripe Live.
+3. **Ciberseguridad Crítica de Potencia y Propiedad Intelectual Soberana:** Cumplimiento integral con NERC CIP (CIP-002 a CIP-014), ISA/IEC 62443, NIST SP 800-82 y titularidad exclusiva de **José Emanuel Guadalupe López (JEGL)** (`LicenseRef-AuraIntelCore-Proprietary`) sellada en modo WORM (`0400`).
