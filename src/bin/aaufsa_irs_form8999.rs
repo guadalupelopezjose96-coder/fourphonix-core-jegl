@@ -1,3 +1,4 @@
+// José Emanuel Guadalupe López (JEGL) | SPDX-License-Identifier: LicenseRef-AuraIntelCore-Proprietary
 #![forbid(unsafe_code)]
 #![deny(
     clippy::unwrap_used,
