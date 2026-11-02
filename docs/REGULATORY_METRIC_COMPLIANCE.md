@@ -3,7 +3,7 @@ SPDX-License-Identifier: LicenseRef-AuraIntelCore-Proprietary
 Copyright (c) 2026 José Emanuel Guadalupe López (JEGL) - AuraIntelCore / Standard 1979. All Rights Reserved.
 -->
 
-# MARCO REGULATORIO, METROLÓGICO, CONTRACTUAL Y DE LIQUIDACIÓN DETERMINISTA (100% WORM)
+# MARCO REGULATORIO DE INDICADORES, RECAPITULACIONES, CONTRATO B2B Y LIQUIDACIÓN (100% WORM)
 
 **Titular y Autor:** José Emanuel Guadalupe López (JEGL)  
 **Ecosistema:** AuraIntelCore.com | Standard1979.com | Fourphonix-com (964521086569) | AuraTetrax-com (877771073297)  
@@ -42,3 +42,11 @@ Copyright (c) 2026 José Emanuel Guadalupe López (JEGL) - AuraIntelCore / Stand
   - `Cargo_Plataforma_21pct = (Ahorro_Total_uUSD * 2100) / 10000`
   - `Beneficio_Cliente_79pct = Ahorro_Total_uUSD - Cargo_Plataforma_21pct`
 - **Paso 3 (Liquidación y Bóveda Forense):** Asiento contable ACID de partida doble, escritura WORM en `~/ledger_audit_vault/*.jsonl` (`chmod 0400`), emisión PEPPOL BIS Billing 3.0 / UBL 2.1 y cobro automatizado vía Stripe Live.
+
+---
+
+## 4. ESTÁNDAR DE RECAPITULACIONES DETERMINISTAS Y CIERRES CONTABLES (ZERO-FINDINGS)
+
+1. **Ventanas Temporales Semiabiertas:** Todo corte horario, diario o mensual se evalúa sobre el intervalo semiabierto `[t_inicio, t_fin)` en UTC RFC 3339 sincronizado por IEEE 1588 PTP para impedir doble conteo u omisión de eventos.
+2. **Agregación Sin Deriva (1:1):** El total de toda recapitulación es la suma entera exacta (`i128`) de los asientos primarios en `~/ledger_audit_vault/*.jsonl`, prohibiendo el re-redondeo en coma flotante (`#![deny(clippy::float_arithmetic)]`).
+3. **Conciliación Trilateral Inmutable:** Toda recapitulación emitida mantiene equivalencia matemática 1:1 entre (a) Telemetría M&V verificada, (b) Libro Mayor de Partida Doble WORM y (c) Facturación PEPPOL / Stripe Live, sellada criptográficamente en `SOVEREIGN_COMPLIANCE_MANIFEST.sha256` bajo permisos `0400`.
